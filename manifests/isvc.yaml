@@ -1,0 +1,11 @@
+
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "fraud-detection"
+spec:
+  predictor:
+    serviceAccountName: kserve-local-s3-sa
+    sklearn:
+      protocolVersion: "v2"
+      storageUri: "s3://mlflow/4/01eb7d363edd4dd49d1d40cd88845e3a/artifacts/model"
